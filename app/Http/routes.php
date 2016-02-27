@@ -1,5 +1,11 @@
 <?php
 
+Route::get('/', function() {
+  return redirect('/blog');
+});
+
+Route::get('blog', 'BlogController@index');
+Route::get('blog/{slug}', 'BlogController@showPost');
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -11,9 +17,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +32,6 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+//Route::group(['middleware' => ['web']], function () {
     //
-});
+//});
