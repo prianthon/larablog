@@ -1,5 +1,5 @@
 <?php
 return [
-  'title' => 'prianthon blog',
+  'title' => 'Larablog',
   'posts_per_page' => 5
 ];

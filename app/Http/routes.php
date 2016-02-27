@@ -6,16 +6,16 @@ Route::get('/', function() {
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@showPost');
 //admin area
-Route::get('admin', function() {
-  return redirect('/admin/post');
-});
-$router->group([
-  'namespace'=>'Admin',
-  'middleware'=>'auth',
-], function() {
-  Route::resource('admin/post', 'PostController');
-  Route::resource('admin/tag', 'TagController');
-  Route::get('admin/upload', 'UploadController@index');
+//Route::get('admin', function() {
+//  return redirect('/admin/post');
+//});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::resource('admin/post', 'Admin\PostController');
+    Route::resource('admin/tag', 'Admin\TagController');
+    Route::get('admin/upload', 'Admin\UploadController@index');
 });
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +46,3 @@ $router->group([
 //Route::group(['middleware' => ['web']], function () {
     //
 //});
-
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
-    Route::get('/home', 'HomeController@index');
-});
