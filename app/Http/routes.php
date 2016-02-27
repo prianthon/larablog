@@ -17,10 +17,6 @@ $router->group([
   Route::resource('admin/tag', 'TagController');
   Route::get('admin/upload', 'UploadController@index');
 });
-//logging in and out
-Route::get('/auth/login', 'Auth\AuthController@getLogin');
-Route::post('/auth/login', 'Auth\AuthController@postLogin');
-Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -50,3 +46,9 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 //Route::group(['middleware' => ['web']], function () {
     //
 //});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
