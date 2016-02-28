@@ -1,6 +1,6 @@
 <?php
 return [
-    'name' => "Larablog",
+    'name' => "Larablogs",
     'title' => "Pri Anton S.",
     'subtitle' => 'Larablog dari Laravel 5.2',
     'description' => 'Larablog Purwokerto',

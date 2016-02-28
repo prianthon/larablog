@@ -7,6 +7,8 @@ Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@showPost');
 $router->get('contact', 'ContactController@showForm');
 Route::post('contact', 'ContactController@sendContactInfo');
+Route::get('rss', 'BlogController@rss');
+Route::get('sitemap.xml', 'BlogController@siteMap');
 //admin area
 //Route::get('admin', function() {
 //  return redirect('/admin/post');
