@@ -13,7 +13,7 @@ Route::get('blog/{slug}', 'BlogController@showPost');
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::resource('admin/post', 'Admin\PostController');
+    Route::resource('admin/post', 'Admin\PostController', ['except' => 'show']);
     Route::resource('admin/tag', 'TagController', ['except' => 'show']);
     Route::get('admin/upload', 'Admin\UploadController@index');
     Route::post('admin/upload/file', 'UploadController@uploadFile');
