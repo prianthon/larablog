@@ -14,7 +14,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::resource('admin/post', 'Admin\PostController');
-    Route::resource('admin/tag', 'Admin\TagController');
+    Route::resource('admin/tag', 'TagController', ['except' => 'show']);
     Route::get('admin/upload', 'Admin\UploadController@index');
 });
 /*
