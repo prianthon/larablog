@@ -1,7 +1,7 @@
 <?php
 return [
     'name' => "Larablog",
-    'title' => "Larablog 2.0",
+    'title' => "Pri Anton S.",
     'subtitle' => 'Larablog dari Laravel 5.2',
     'description' => 'Larablog Purwokerto',
     'author' => 'Pri Anton Subardio',
